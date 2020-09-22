@@ -21,7 +21,7 @@ const pdkdf2Promnise = util.promisify(crypto.pdkdf2);
 
 // callback hell 발생 -> async await 사용 권장
 // randomBytes라는 함수가 promise를 지원해야만 바꿀 수 있다.
-// 그렇지만 지원하지 않으므로 이때 util.promisify()를 사용한다.
+// 그렇지만 지원하지 않으므로 이때 util.promisify()를 사용한다. 
 crypto.randomBytes(64, (err, buf) => {
     const salt = buf.toString('base64');
     console.log('salt', salt);
